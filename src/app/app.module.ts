@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { PedidoFormComponent } from './pedido-form/pedido-form.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroFormComponent,
-    PedidoFormComponent
+    PedidoFormComponent,
+    FornecedorComponent
 
   ],
   imports: [

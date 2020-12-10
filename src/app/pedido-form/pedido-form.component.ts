@@ -7,6 +7,7 @@ import { Pedido } from '../pedido';
   templateUrl: './pedido-form.component.html',
   styleUrls: ['./pedido-form.component.css']
 })
+
 export class PedidoFormComponent {
   /* private produtoA = {
     nome:"Produto A ",

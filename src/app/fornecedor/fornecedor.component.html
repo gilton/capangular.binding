@@ -1,14 +1,33 @@
+
+<h2>Fornecedor - Ecommerce System</h2>
+
+<hr />
+
+<p>
+    <button (click) = "exibirCadastro()">
+        Novo
+    </button>
+    <button disabled="true">Editar</button>
+    <button disabled="true">Detalhar</button>
+    <button disabled="true">Excluir</button>
+</p>
+
+<p>
+    <app-fornecedor-view></app-fornecedor-view>
+</p>
+
+
 <p>
     <label for="nome">Nome:</label>
     <input type="text" [(ngModel)] = fornecedor.nome required/>
 </p>
 <p>
-    <label for="endereco">Endereco:</label>
-    <input type="text" [(ngModel)] = fornecedor.endereco required/>
-</p>
-<p>
     <label for="cnpj">CNPJ:</label>
     <input type="text" [(ngModel)] = fornecedor.cnpj required/>
+</p>
+<p>
+    <label for="contato">Contato:</label>
+    <input type="text" [(ngModel)] = fornecedor.contato required/>
 </p>
 
 <p>

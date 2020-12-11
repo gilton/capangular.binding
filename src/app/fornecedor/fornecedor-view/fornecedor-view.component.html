@@ -1,0 +1,15 @@
+<table border="1">
+    <tr>
+      <td><b>Id</b></td>
+      <td><b>Nome</b></td>
+      <td><b>CNPJ</b></td>
+      <td><b>Contato</b></td>
+    </tr>
+  
+    <tr *ngFor="let fornecedor of fornecedores">
+      <td>{{fornecedor.id}}</td>
+      <td>{{fornecedor.nome}}</td>
+      <td>{{fornecedor.cnpj}}</td>
+      <td>{{fornecedor.contato}}</td>
+    </tr>
+  </table>

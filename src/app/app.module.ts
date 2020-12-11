@@ -7,6 +7,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { FornecedorComponent } from './fornecedor/fornecedor.component';
 import { FormsModule } from '@angular/forms';
 import { ClienteViewComponent } from './cliente/cliente-view/cliente-view.component';
+import { FornecedorViewComponent } from './fornecedor/fornecedor-view/fornecedor-view.component';
 
 
 
@@ -16,6 +17,7 @@ import { ClienteViewComponent } from './cliente/cliente-view/cliente-view.compon
     ClienteComponent,
     FornecedorComponent,
     ClienteViewComponent,
+    FornecedorViewComponent,
   ],
   imports: [
     BrowserModule,

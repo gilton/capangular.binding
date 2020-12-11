@@ -13,6 +13,7 @@ export class FornecedorComponent implements OnInit {
   error: boolean = false
   errorDesc: string = ""
 
+ ehCadastro: boolean = false
 
   constructor() { }
   
@@ -28,5 +29,9 @@ export class FornecedorComponent implements OnInit {
       this.error = false;
     }
   }
+
+  exibirConsulta() { this.ehCadastro = false }
+
+  exibirCadastro() { this.ehCadastro = true }
 
 }

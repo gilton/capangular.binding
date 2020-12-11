@@ -24,6 +24,10 @@
 <div [hidden] = "!ehCadastro">
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
         
+        <label for="id">ID </label>
+        <input id="id" name="id" #id="ngModel"  
+            [value]=cliente.id ngModel required />
+        
         <label for="nome">Nome </label>
         <input id="nome" name="nome" #nome="ngModel"  
             [value]=cliente.nome ngModel required />
@@ -35,7 +39,7 @@
         <input id="endereco" name="endereco" ngModel />
         <p>&nbsp;</p>
         <p>
-            <button (click) = "adicionarCliente(cliente,clientes)">Registrar</button>
+            <button (click) = "exibirConsulta()">Registrar</button>
             <button (click) = "exibirConsulta()">Cancelar</button>
         </p>
 

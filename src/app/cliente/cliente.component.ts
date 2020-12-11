@@ -32,7 +32,10 @@ export class ClienteComponent implements OnInit {
     //console.log(form.value)
     
     let novo:Cliente = form.value
-    //console.log(novo.nome)
+    console.log('id: '+novo.id)
+    console.log('nome: '+novo.nome)
+    console.log('cpf: '+novo.cpf)
+    console.log('endereço: '+novo.endereco)
 
     this.clientes.push(novo);
   }
@@ -43,12 +46,5 @@ export class ClienteComponent implements OnInit {
   exibirConsulta() { this.ehCadastro = false }
 
   exibirCadastro() { this.ehCadastro = true }
-
-  adicionarCliente(obj: Cliente, clientes: Array<Cliente>) {
-    clientes.push(obj);
-    //console.log(clientes);
-    //console.log(obj)
-    this.ehCadastro = false;
-  }
 
 }

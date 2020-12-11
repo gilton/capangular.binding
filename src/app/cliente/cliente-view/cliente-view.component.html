@@ -1,0 +1,17 @@
+
+
+<table border="1">
+    <tr>
+      <td><b>Id</b></td>
+      <td><b>Nome</b></td>
+      <td><b>CPF</b></td>
+      <td><b>Endereço</b></td>
+    </tr>
+  
+    <tr *ngFor="let cliente of clientes">
+      <td>{{cliente.id}}</td>
+      <td>{{cliente.nome}}</td>
+      <td>{{cliente.cpf}}</td>
+      <td>{{cliente.endereco}}</td>
+    </tr>
+  </table>

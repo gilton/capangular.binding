@@ -1,0 +1,60 @@
+
+<h2>Clientes - Ecommerce System</h2>
+
+<hr />
+
+<p>
+    <button (click) = "exibirCadastro()">
+        Novo
+    </button>
+    <button disabled="true">Editar</button>
+    <button disabled="true">Detalhar</button>
+    <button disabled="true">Excluir</button>
+</p>
+
+<p>
+    <app-cliente-view [hidden]="ehCadastro"></app-cliente-view>
+</p>
+
+
+<!-- <p [hidden]="!error" style="color: red;">
+    {{ errorDesc }}
+</p> -->
+
+<div [hidden] = "!ehCadastro">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+        
+        <label for="nome">Nome </label>
+        <input id="nome" name="nome" #nome="ngModel"  
+            [value]=cliente.nome ngModel required />
+    
+        <label for="cpf" >CPF </label>
+        <input id="cpf" name="cpf" ngModel required/>
+    
+        <label for="endereco">Endereço </label>
+        <input id="endereco" name="endereco" ngModel />
+        <p>&nbsp;</p>
+        <p>
+            <button (click) = "adicionarCliente(cliente,clientes)">Registrar</button>
+            <button (click) = "exibirConsulta()">Cancelar</button>
+        </p>
+
+    </form>
+</div>
+
+<!-- <p>Primeiro nome: {{ nome.value }}</p>
+<p>Primeiro nome valido: {{ primeironome.valid }}</p> -->
+
+<!-- <p> Formulário: {{ form.value | json}} </p>
+<p> Formulário válido: {{ form.valid }} </p>
+
+<hr> <p></p>
+
+<form #formProd="ngForm" (ngSubmit)="onSubmitProd(formProd)" novalidate>
+    <input name="nome" #nome="ngModel" ngModel required /><br>
+    <input name="preco" ngModel required /><br>
+    <input type="submit" value="Salvar" /><br>
+</form>
+
+<p> Formulário: {{ formProd.value | json}} </p>
+<p> Formulário válido: {{ formProd.valid }} </p> -->

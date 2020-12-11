@@ -1,43 +1,20 @@
-<div class="container">
-    <div [hidden]="!submitted">
-        <h2>Fornecedor Cadastrado</h2>
-        
-        <div class="row">
-            <div class="col-xs-3">Fornecedor</div>
-            <div class="col-xs-9">{{ selected.nomeFornecedor }}</div>
-        </div>
-        
-        <div class="row">
-            <div class="col-xs-3">CNPJ</div>
-            <div class="col-xs-9">{{ selected.cnpj }}</div>
-        </div>
-        <p>
-            <button class="btn btn-primary" (click)="submitted=false">Editar</button>
-        </p>
-    </div>
-    <div>
-        <h1>E-commerce - Formulário Fornecedor </h1>
-        
-        <form (ngSubmit)="onSubmit()" #fornecedorForm="ngForm">      
-            <div class="form-group">
-                <label for="fornecedor">Fornecedor</label>
-                <input type="text" class="form-control" id="fornecedor"
-                required
-                [(ngModel)]="selected.nomeFornecedor" name="fornecedor" #fornecedor="ngModel">
-                <div [hidden]="fornecedor.valid || fornecedor.pristine"
-                class="alert alert-danger">
-                Fornecedor obrigatório!
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="cnpj">cnpj</label>
-            <input type="text" class="form-control" id="data"
-            required
-            [(ngModel)]="selected.cnpj" name="data" #data="ngModel">
-        </div>
-        
-        <button type="submit" class="btn btn-success" (click)="showAlert()" [disabled]="!fornecedorForm.form.valid">Submeter</button>
-        <button type="button" class="btn btn-default" (click)="newFornecedor(); fornecedorForm.reset()">Novo Fornecedor</button>
-    </form>
-</div>
+<p>
+    <label for="nome">Nome:</label>
+    <input type="text" [(ngModel)] = fornecedor.nome required/>
+</p>
+<p>
+    <label for="endereco">Endereco:</label>
+    <input type="text" [(ngModel)] = fornecedor.endereco required/>
+</p>
+<p>
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" [(ngModel)] = fornecedor.cnpj required/>
+</p>
+
+<p>
+    <input type="submit" value="Enviar" (click)="onSend()" />
+</p>
+
+<p [hidden]="!error" style="color: red;">
+    {{ errorDesc }}
+</p>

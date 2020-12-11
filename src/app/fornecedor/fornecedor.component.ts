@@ -1,35 +1,32 @@
-import { FornecedorInterface } from './../interfaces/FornecedorInterface';
-import { Fornecedor } from './../models/Fornecedor';
-import { Component, EventEmitter, Input, Output  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Fornecedor } from '../model/fornecedor.models';
 
 @Component({
   selector: 'app-fornecedor',
   templateUrl: './fornecedor.component.html',
-  styles: [  ]
+  styleUrls: ['./fornecedor.component.css']
 })
 
-export class FornecedorComponent  {
-
-  @Input() nome: string = '';
-  @Input() cnpj: string = '';
+export class FornecedorComponent implements OnInit {
   
-  @Output() submitEvent = new EventEmitter<any>();
-  
-  novo: FornecedorInterface;
-  
-  selected: FornecedorInterface = {nomeFornecedor: 'Teste', cnpj: '983r9837897987'};
+  fornecedor: Fornecedor = {nome: ""};
+  error: boolean = false
+  errorDesc: string = ""
 
-  public fornecedores: Array<Fornecedor>;
+
+  constructor() { }
   
-  onSubmit() { console.log('hello world'); this.submitted = true; }
-
-  newFornecedor() { this.novo; this.submitted = false }
+  ngOnInit(): void { }
   
-  submitted = false;
+  onSend() {
+    console.log(this.fornecedor)
 
-  constructor() {  }
-
-  showAlert() {
-    alert('Cadastrado com sucesso!')
+    if( !this.fornecedor.nome ) {
+      this.error = true;
+      this.errorDesc = "Preencha o nome"
+    } else {
+      this.error = false;
+    }
   }
+
 }
